@@ -1,0 +1,301 @@
+body{
+	font-size: 14px;
+	/*text-transform: uppercase;*/
+}
+/*input
+{
+	text-transform: uppercase;
+}*/
+/*commom classes*/
+.padding_row_2{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.padding_row_3{
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+.padding_row_4{
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+/*end common class*/
+
+#ip_uppercase input
+{
+	text-transform: uppercase;
+}
+/*top bar*/
+.top_info{
+	font-size: 14px;
+}
+.top_bar{
+	background-color: #c9766e;
+}
+.logo{
+	padding-top: 20px;
+}
+.logo>a>img{
+	width: 100%;
+    margin-top: -13px;
+}
+
+.top_right_icon{
+	/* padding-top: 35px; */
+    /*margin-left: 15%;*/
+}
+
+/*navbar*/
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+.nav_custom{
+	background: #c9766e;
+	margin: 0px;
+	border: none;
+    border-radius: 0;
+}
+.nav_custom .nav_custom_li >li>a{
+	color: #fff;
+    padding: 14px 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	color: #fff;
+}
+
+
+.skin-blue .main-header .navbar
+{
+	background-color: #c9766e;
+}
+
+#arrow_img_lf
+{
+	display: none;
+}
+
+
+.cust_ip_border_1
+{
+	border: none;
+	border-bottom: 1px solid #c9766e;
+}
+
+.cust_nav_pills>li.active>a, .cust_nav_pills>li.active>a:hover, .cust_nav_pills>li.active>a:focus
+{
+	border-top-color:#c9766e;
+	background-color: transparent;
+	border-bottom: 1px solid #c9766e;
+	color: #000;
+}
+
+.pr_title
+{
+	text-transform: uppercase;
+	border-right: 1px solid #ccc;
+	width: 25%;
+}
+.pr_data
+{
+border-right: 1px solid #ccc;
+text-transform: uppercase;
+width: 25%;
+}
+.pr_header
+{
+	background: #c9766e;
+	color: #fff;
+	padding: 0px 10px !important;
+}
+.t_n_c
+{
+	text-align: justify;
+}
+
+.iso
+{
+	text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cust_sign_out_btn:hover{
+	background-color: transparent;
+	border-color: #fff;
+}
+
+.login_bg
+{
+	background-image: url(../../images/ab2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dash_cust_ip
+{
+	border: none;
+	font-size: 12px;
+	background:transparent;
+}
+.dash_cust_ip:focus
+{
+	border: none;
+	background:transparent;
+}
+.dash_cust_btn_view
+{
+	margin-bottom: 10px;
+    color: #c9766e;
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-bottom: 1px solid;
+}
+.dash_cust_btn_sp
+{
+	margin-bottom: 10px;
+    color: #f59c1a;
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-bottom: 1px solid;
+}
+
+.dash_cust_btn_tp
+{
+	margin-bottom: 10px;
+    color: #3c8dbc;
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+	border-bottom: 1px solid;
+}
+/* .tr_bottom
+{
+	border-bottom: 2px solid #222d32;
+} */
+
+.dash_cust_bg
+{
+	background: transparent;
+}
+
+.dash_cust_drop_down
+{
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background: transparent;
+}
+
+.cust_sign_out_btn
+{
+	background-color: transparent !important;
+	border-color: #fff !important;
+	/* color: #fff !important; */
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control
+{
+	background: transparent;
+}
+
+.cust_search_btn
+{
+	width: 100% !important;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+}
+.cust_search_btn:hover{
+	width: 100% !important;
+    background: #c9766e;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.cust_bt_border
+{
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background: transparent;
+}
+
+.dash_cust_save
+{
+	padding: 5px 10px;
+    background: #c9766e;
+    border: 1px solid #c9766e;
+}
+
+.dash_cust_save:hover
+{
+	padding: 5px 10px;
+    background: #c9766e;
+    border: 1px solid #c9766e;
+}
+/*Media Queries*/
+
+/*============================================================
+	For Small Desktop
+==============================================================*/
+
+@media (min-width: 980px) and (max-width: 1150px) {
+
+
+
+}
+
+
+/*============================================================
+	Tablet (Portrait) Design for a width of 768px
+==============================================================*/
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+
+/*============================================================
+	Mobile (Portrait) Design for a width of 320px
+==============================================================*/
+
+@media only screen and (max-width: 767px) 
+{
+	.top_right_icon
+	{
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+
+	
+
+}
+
+/*============================================================
+	Mobile (Landscape) Design for a width of 480px
+==============================================================*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) 
+{
+
+  .cust_col_md_3
+{
+	width: 22.5%;
+}
+}

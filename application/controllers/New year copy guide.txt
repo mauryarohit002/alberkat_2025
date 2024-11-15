@@ -7,13 +7,15 @@
     1. admin/Cmaster
         1. function update_app_status
             1. change fees in message
-            2. chnage fees payment path
+            2. change fees payment path
         2. function add_update_inward
             1. change api url //(confirm tranfer in fees time url)
     2. chome
         1. function add_update_student_registration
             1. change day and month as per given age criteria
-            2. comment (echo 5; return;) // when admission closed then it uncomment this
+            2. comment (echo 5; return;) // when admission closed then uncomment this
+        2. function payment_form
+            1. check fees set is '100500' // if testing time it do as rs. 1 check is set or not
 3. view
     1. pages/critria
         1. change image as per new image given

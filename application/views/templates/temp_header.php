@@ -101,9 +101,9 @@
 
         <div class="col-md-10 col-xs-12 top_right_icon" style="padding-left: 0px;">
               <p style="text-align:right;padding-top:5px;color:#FFF">
-                  <marquee width="60%" direction="left" style="color:#000;">
+                  <marquee width="60%" direction="left" style="color: #ffffff;text-shadow: 0 0 20px #000000;font-size: 16px;">
                       <!-- Nursery Admissions is closed due to full capacity of school. -->
-                    Nursery Admissions will reopen on 25th Dec 2024 @11.00 am. All the best to all Admission Seekers.
+                    Nursery Admissions will reopen on 16th Dec 2024 @11.00 am. All the best to all Admission Seekers.
                   </marquee>
                   C.B.S.E. AFFILIATION NO : 1130375  /  SCHOOL CODE : 30252
               </p>
@@ -127,10 +127,10 @@
                         <li><a href="<?php echo base_url('chome/privacy_policy')?>">POLICY</a></li>
                         <!-- <li><a href="<?php echo base_url('chome/refund_policy')?>">REFUND POLICY</a></li> -->
                         <li><a href="<?php echo base_url('chome/contact_us')?>">CONTACT US</a></li>
-                        <li><a href="<?php echo base_url('chome/criteria')?>">ADMISSION CRITERIA 2024</a></li>
+                        <li><a href="<?php echo base_url('chome/criteria')?>">ADMISSION CRITERIA 2025</a></li>
                         <li><a href="<?php echo base_url('chome/user_login')?>">EDIT APPLICATION</a></li>
                         <li><a href="<?php echo base_url('clogin/search')?>">TRACK APPLICATION</a></li>
-                         <li><a href="<?php echo base_url('chome/register')?>">REGISTER</a></li> 
+                         <!--<li><a href="<?php echo base_url('chome/register')?>">REGISTER</a></li> -->
                         
                     </ul>
                   </div><!-- /.navbar-collapse -->

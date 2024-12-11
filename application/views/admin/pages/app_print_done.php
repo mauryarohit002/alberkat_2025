@@ -145,6 +145,7 @@ else
                                                 <td align="center">
                                                     <button type="button" class="glyphicon glyphicon-eye-open dash_cust_btn_view" onClick="preview_student(<?php echo $value['rm_id'] ?>);"></button><br>
                                                     <button type="button" class="glyphicon glyphicon-print dash_cust_btn_sp" style="margin-bottom:10px;" onClick="print_student(<?php echo $value['rm_id'] ?>);"></button><br>
+                                                    <button type="button" class="glyphicon glyphicon-print dash_cust_btn_sp" style="margin-bottom:10px;" onClick="print_student(<?php echo $value['rm_id'] ?>,1);"></button><br>
                                                     <!-- <button class="glyphicon glyphicon-print dash_cust_btn_tp" onClick="print_teach_form(<?php echo $value['rm_id'] ?>);"></button> -->
                                                 </td>
                                                 <td>

@@ -1,39 +1,47 @@
 <?php $this->load->view('templates/temp_header') ?>
+
 <div class="container-fluid" >
-    <div class="row">
+    <div class="row" style="margin-bottom: 3rem;">
         <div class="col-md-10 col-md-offset-1">
             
             <h1 class="about_title">PRIVACY POLICY</h1>
 
-            <p style="text-align: justify;">We at Al-Barkaat Malik Muhammad Islam English School , Mumbai respect the privacy of everyone who visits this website and are committed to maintain the privacy and security of the personal information of all visitors to this website. Our policy on the collection and use of personal information and other information is outlined below.
-            </p>
+        <p><b>Personal Information Collection and Use</b></p>
+<p>We collect and use personal information for educational and school admission purposes. Here’s how and why we do it:</p>
+<ul>
+ <li>Communication: We may contact you through your provided details (mobile number via SMS/WhatsApp or email) to share important information or updates about your ward’s (child’s) admission process.</li>
+ <li>Admission Updates: We will reach out to you regarding the status of your ward’s (child’s) admission or to process any applications you’ve submitted.</li>
+ <li>Admin Tasks: To manage and fulfill our responsibilities related to any agreements you have with us.</li>
+ <li>Request Responses: We use your information to respond to your queries, improve our services, and communicate about Nursery, Junior, and Senior Admissions.</li>
+</ul>
+<p>We respect your privacy and will not share your personal information within Al-Barkaat Malik Muhammad Islam English School or with any third parties for direct marketing. However, because of the nature of the internet, your data may be stored or processed for the purposes mentioned above, but it will not be shared for commercial marketing.
+Legal and Security Disclosure</p>
+<ul>
+ <li>Law Enforcement: If required by law, we may share personal information for security purposes, law enforcement investigations, or to comply with legal requirements.</li>
+ <li>Statistical Use: In some cases, we may remove personally identifiable information and use the remaining data for statistical, historical, or scientific research.</li>
+</ul>
+<p><b>Consent and Agreement:</b></p>
+<p>By using this site, you are voluntarily providing us with your personal information. This may include your email, phone numbers, address, and other personal details. Al-Barkaat Malik Muhammad Islam English School will use this information to communicate with you.</p>
+<p>Additionally, if you’ve shared similar details with us in the past, we may continue to use them for the purposes mentioned here. By submitting your information, you are giving your consent for us to process and use it as described in this policy.</p>
 
-            <h3 class="about_title">Personal Information</h3>
-            <p style="text-align: justify;">We collect and use personal information for educational needs/school admission purposes in order:</p>
-            <p>To provide information or interactive services through this website, to your mentioned contact details (Mobile number via sms) &amp; e-mail address</p>
-            <p>To contact you in relation to the admission status of your ward (child).To process applications submitted by you.</p>
-            <p>To administer or otherwise carry out our obligations in relation to any agreement you have with us.</p>
-            <p>To process and respond to requests, improve our operations, and communicate with parents about nursery admissions.</p>
-            <p>We will not share, either within Al- Barkaat Malik Muhammad Islam English School Mumbai, or with a third party, any information collected at this page for direct marketing purposes. Because of the nature of the Internet, we may transmit the information for storage, or for carrying out the processing intended, but we do not provide or use personal information to unrelated businesses for direct marketing purposes.</p>
-
-            <p>To the extent required or permitted by law, we may use and disclose personal information in connection with security related or law enforcement investigations or in the course of cooperating with authorities or complying with legal requirements.</p>
-
-            <p>We may also remove all the personally identifiable information and use the rest for historical, statistical or scientific purposes.</p>
-            <p>By using the site for the purpose, you are voluntarily releasing information to us. Your e-mail address, contact numbers, residence/office address and personal details will be used by Al- Barkaat Malik Muhammad Islam English School Mumbai, to respond to you.In addition, we may have collected similar information from you in the past. By entering this website you are consenting to the terms of our information privacy policy and to our continued use of previously collected information. By submitting your personal information to us, you will be treated as having given your permission for the processing of your personal data as set out in this policy.</p>
         </div>
         <br/>
         <div class="col-md-10 col-md-offset-1">
-            <h1 class="about_title">REFUND POLICY</h1>
-            <p style="text-align: justify;"> Candidates are required to pay a non-refundable admission application fee of Rs: 1000/- . The fee once paid will not be refunded in any case/type on any account,nor would be transferable to any other candidate neither this fee be held in reserve for future admissions.</p>
-            <p> Fee once paid is not refundable or adjustable under any circumstances in future.Don&#39;t pay any extra amount apart from the admission application fee.</p>
-            <p><b>Note</b>: Admission once cancelled will not be re-considered and fees paid will not be refunded under any circumstances.</p>
-            <p style="text-align: justify;"> If the admission form is incomplete,</p>
-            <p> If the fee paid is short,  </p>
-            <p> If the supporting documents are not complete,</p>
-            <p> If false documents have been submitted,</p>
-            <p> Admission Forms received without supporting documents will be rejected and fees will not be refunded.</p>
-            <p> Before filling up the application form, please ensure your eligibility for admission as mentioned in admission terms &amp; condition/criteria of admission, otherwise the application form will be cancelled and the fee paid by you will not be refunded. Neither any intimation will be sent to you, nor will any correspondence be entertained in this regard.</p>
-
+            <h2 class="about_title">REFUND POLICY</h2>
+<ul>
+ <li>A non-refundable admission application fee of Rs. 1000/- is required. Once paid, this fee cannot be refunded, transferred to another candidate, or held for future admissions.</li>
+ <li>The fee is non-refundable and non-adjustable under any circumstances. Please ensure you pay only the admission application fee—no extra amounts should be paid.</li>
+</ul>
+<p><b>Important Notes:</b></p>
+<ul>
+ <li>If you cancel your admission, it will not be reconsidered, and the fee will not be refunded.</li>
+ <li>Your application will be rejected, and fees will not be refunded if:</li>
+ <li>The admission form is incomplete.</li>
+ <li>The fee paid is insufficient.</li>
+ <li>Supporting documents are missing.</li>
+ <li>False documents are submitted.</li>
+ <li>Make sure to check your eligibility as per the admission criteria before filling out the application form. If you're not eligible, your application will be canceled, and the fee paid will not be refunded. No notifications or correspondence will be sent in this case.</li>
+</ul>
         </div>
     </div>   
 

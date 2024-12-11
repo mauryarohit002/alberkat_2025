@@ -81,7 +81,7 @@ class Cmaster extends CI_Controller
 		$record['user_data'][0]['rm_child_birth_date'] = date('d-m-Y',strtotime($record['user_data'][0]['rm_child_birth_date']));
 		echo json_encode($record);
 	}
-	public function print_student_app($rm_id)
+	public function print_student_app($rm_id,$without=0)
 	{
 		$user_id = $this->session->userdata('user_id');
 		if(!empty($user_id))
@@ -95,7 +95,11 @@ class Cmaster extends CI_Controller
 			// echo "<pre>";print_r($result);exit();
 			if(!empty($result['app']))
 			{
-				$this->load->view('admin/pdfs/print_student_application',$result);
+			    if($without==1){
+			        $this->load->view('admin/pdfs/print_student_application_without_photo',$result);
+			    }else{
+			    	$this->load->view('admin/pdfs/print_student_application',$result);
+			    }
 			}
 			else
 			{
@@ -194,16 +198,16 @@ class Cmaster extends CI_Controller
 			{
 				$rm_sd_photo_child = $formdata['rm_child_photo_path'];
 			}
-			if($img_data['rm_child_family_photo']['error'] == 0)
+			if($img_data['rm_child_mother_photo']['error'] == 0)
 			{
-				$ext = pathinfo($img_data['rm_child_family_photo']['name'], PATHINFO_EXTENSION);
-				$rm_sd_photo_family = time().'_'.pathinfo($img_data['rm_child_family_photo']['name'],PATHINFO_FILENAME);
-				$rm_sd_photo_family = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_family).'.'.$ext;
-				$config['file_name'] = $rm_sd_photo_family;
+				$ext = pathinfo($img_data['rm_child_mother_photo']['name'], PATHINFO_EXTENSION);
+				$rm_sd_photo_mother = time().'_'.pathinfo($img_data['rm_child_mother_photo']['name'],PATHINFO_FILENAME);
+				$rm_sd_photo_mother = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_mother).'.'.$ext;
+				$config['file_name'] = $rm_sd_photo_mother;
 				$this->upload->initialize($config);
-				if (!$this->upload->do_upload('rm_child_family_photo'))
+				if (!$this->upload->do_upload('rm_child_mother_photo'))
 				{
-					$rm_sd_photo_family = "no_image.jpg";
+					$rm_sd_photo_mother = "no_image.jpg";
 				}
 				else
 				{
@@ -221,7 +225,36 @@ class Cmaster extends CI_Controller
 			}
 			else
 			{
-				$rm_sd_photo_family = $formdata['rm_child_family_photo_path'];
+				$rm_sd_photo_mother = $formdata['rm_child_mother_photo_path'];
+			}
+			if($img_data['rm_child_father_photo']['error'] == 0)
+			{
+				$ext = pathinfo($img_data['rm_child_father_photo']['name'], PATHINFO_EXTENSION);
+				$rm_sd_photo_father = time().'_'.pathinfo($img_data['rm_child_father_photo']['name'],PATHINFO_FILENAME);
+				$rm_sd_photo_father = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_father).'.'.$ext;
+				$config['file_name'] = $rm_sd_photo_father;
+				$this->upload->initialize($config);
+				if (!$this->upload->do_upload('rm_child_father_photo'))
+				{
+					$rm_sd_photo_father = "no_image.jpg";
+				}
+				else
+				{
+					$full_path = $this->upload->data('full_path');
+					$config_thumb['image_library'] 	= 'gd2';
+					$config_thumb['source_image'] 	= $full_path;
+					$config_thumb['maintain_ratio'] 	= TRUE;
+					$config_thumb['width']         	= 120;
+					$config_thumb['height']       	= 180;
+					$this->load->library('image_lib');
+					$this->image_lib->initialize($config_thumb);
+					$this->image_lib->resize();
+					$this->image_lib->clear();
+				}
+			}
+			else
+			{
+				$rm_sd_photo_father = $formdata['rm_child_father_photo_path'];
 			}
 			if($img_data['rm_child_birth_certi_photo']['error'] == 0)
 			{
@@ -290,6 +323,9 @@ class Cmaster extends CI_Controller
 			$reg_master['rm_child_mother_name'] 			= strtoupper($formdata['rm_child_mother_name']);
 			$reg_master['rm_child_gender'] 					= strtoupper($formdata['rm_child_gender']);
 			$reg_master['rm_child_birth_date'] 				= date('Y-m-d',strtotime($formdata['rm_child_birth_date']));
+			if(!empty($formdata['rm_parent_mob_no'])){
+			    $reg_master['rm_parent_mob_no'] 			= $formdata['rm_parent_mob_no'];
+			}
 			$reg_master['rm_child_birth_town'] 				= strtoupper($formdata['rm_child_birth_town']);
 			$reg_master['rm_child_birth_state'] 			= strtoupper($formdata['rm_child_birth_state']);
 			$reg_master['rm_child_nationality'] 			= strtoupper($formdata['rm_child_nationality']);
@@ -314,7 +350,8 @@ class Cmaster extends CI_Controller
 				$reg_master['rm_child_pre_school_name'] 		= strtoupper($formdata['rm_child_pre_school_name']);
 			}
 			$reg_master['rm_child_photo'] 					= $rm_sd_photo_child;
-			$reg_master['rm_child_family_photo'] 			= $rm_sd_photo_family;
+			$reg_master['rm_child_father_photo'] 			= $rm_sd_photo_father;
+			$reg_master['rm_child_mother_photo'] 			= $rm_sd_photo_mother;
 			$reg_master['rm_child_birth_certi_photo'] 		= $rm_sd_photo_birth_cert;
 			$reg_master['rm_child_aadhar_card_photo'] 		= $rm_sd_photo_aadhar;
 			$reg_master['rm_child_father_middle_name'] 		= strtoupper($formdata['rm_child_father_middle_name']);
@@ -867,9 +904,9 @@ class Cmaster extends CI_Controller
 			{
 				// echo "hello";
 				//Fees not paid
-				 $msg .= "Assalamualaikum,%20Respected%20Parents,%20This%20is%20to%20inform%20you%20that%20your%20form%20no:%20".$app_no."%20has%20been%20provisionally%20selected%20for%20".$std_name.".%20To%20confirm%20your%20childs%20admission%20you%20are%20required%20to%20pay%20Rs.55,100/-%20by%20clicking%20on%20the%20link%20https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment%20OR%20through%20Demand%20Draft%20in%20favour%20of%20AL-BARKAAT%20MALIK%20MUHAMMAD%20ISLAM%20ENGLISH%20SCHOOL%20(payable%20Mumbai),%20OR%20through%20QR%20Scan%20option%20available%20at%20School%20Fees%20Office%20Timing:%2011.00%20am%20to%202.00%20pm%20on%20working%20days.%20Kindly%20clear%20your%20fees%20".$incomplete_app."%20Thanking%20you%20ABMMIES.";
-                 $whtsapp_msg .= "Assalamualaikum, Respected Parents, This is to inform you that your form no: ".$app_no." has been provisionally selected for ".$std_name.". To confirm your childs admission you are required to pay Rs.55,100/- by clicking on the link https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment  OR through Demand Draft in favour of AL-BARKAAT MALIK MUHAMMAD ISLAM ENGLISH SCHOOL (payable Mumbai), OR through QR Scan option available at School Fees, Office Timing: 11.00 am to 2.00 pm on working days. Kindly clear your fees ".$incomplete_app." Thanking you ABMMIES.";
-                $option['message'] = "Assalamualaikum, Respected Parents,<br/> This is to inform you that your form no: ".$app_no." has been provisionally selected for ".$std_name.". To confirm your childs admission you are required to pay Rs.55,100/- by clicking on the link https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment  OR through Demand Draft in favour of AL-BARKAAT MALIK MUHAMMAD ISLAM ENGLISH SCHOOL (payable Mumbai), OR through QR Scan option available at School Fees, Office Timing: 11.00 am to 2.00 pm on working days. Kindly clear your fees ".$incomplete_app." Thanking you ABMMIES. <br/><br/> Regard <br/> albarkaat team";
+				 $msg .= "Assalamualaikum,%20Respected%20Parents,%20This%20is%20to%20inform%20you%20that%20your%20form%20no:%20".$app_no."%20has%20been%20provisionally%20selected%20for%20".$std_name.".%20To%20confirm%20your%20childs%20admission%20you%20are%20required%20to%20pay%20Rs.58,600/-%20by%20clicking%20on%20the%20link%20https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment%20OR%20through%20Demand%20Draft%20in%20favour%20of%20AL-BARKAAT%20MALIK%20MUHAMMAD%20ISLAM%20ENGLISH%20SCHOOL%20(payable%20Mumbai),%20OR%20through%20QR%20Scan%20option%20available%20at%20School%20Fees%20Office%20Timing:%2011.00%20am%20to%202.00%20pm%20on%20working%20days.%20Kindly%20clear%20your%20fees%20".$incomplete_app."%20Thanking%20you%20ABMMIES.";
+                 $whtsapp_msg .= "Assalamualaikum, Respected Parents, This is to inform you that your form no: ".$app_no." has been provisionally selected for ".$std_name.". To confirm your childs admission you are required to pay Rs.58,600/- by clicking on the link https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment  OR through Demand Draft in favour of AL-BARKAAT MALIK MUHAMMAD ISLAM ENGLISH SCHOOL (payable Mumbai), OR through QR Scan option available at School Fees, Office Timing: 11.00 am to 2.00 pm on working days. Kindly clear your fees ".$incomplete_app." Thanking you ABMMIES.";
+                $option['message'] = "Assalamualaikum, Respected Parents,<br/> This is to inform you that your form no: ".$app_no." has been provisionally selected for ".$std_name.". To confirm your childs admission you are required to pay Rs.58,600/- by clicking on the link https://www.albarkaatadmissions.com/fees2425/chome/nur_fees_payment  OR through Demand Draft in favour of AL-BARKAAT MALIK MUHAMMAD ISLAM ENGLISH SCHOOL (payable Mumbai), OR through QR Scan option available at School Fees, Office Timing: 11.00 am to 2.00 pm on working days. Kindly clear your fees ".$incomplete_app." Thanking you ABMMIES. <br/><br/> Regard <br/> albarkaat team";
 				$option['subject'] = "Provisional Selection";
 				
 			}

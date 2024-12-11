@@ -76,10 +76,10 @@
 	                        	<label for="inputEmail3" class="col-md-2 control-label">Gender</label>
 	                        	<div class="col-md-2 col-xs-12">
 	                            	<label class="radio-inline">
-	                                    <input type="radio" name="rm_child_gender" class="gender_class" value="M" <?php echo empty($student_data)?'':($student_data[0]['rm_child_gender'] == "M")?"checked":"" ?>>Male
+	                                    <input type="radio" name="rm_child_gender" class="gender_class" value="M" <?php echo (empty($student_data))?'':(($student_data[0]['rm_child_gender'] == "M")?"checked":"") ?> >Male
 	                                </label>
 	                                <label class="radio-inline">
-	                                    <input type="radio" name="rm_child_gender" class="gender_class" value="F" <?php echo empty($student_data)?'': ($student_data[0]['rm_child_gender'] == "F")?"checked":""?>>Female
+	                                    <input type="radio" name="rm_child_gender" class="gender_class" value="F" <?php echo (empty($student_data))?'': (($student_data[0]['rm_child_gender'] == "F")?"checked":"")?> >Female
 	                                </label>
 	                            </div>
 	                            <label for="inputEmail3" class="col-md-1 control-label">Date of Birth</label>
@@ -122,9 +122,9 @@
 	                        </div>
                         	<br>
 	                        <div class="form-group">
-	                        	<label for="inputEmail3" class="col-md-2 control-label">Permanent Address <br> <span style="color: red;font-weight: normal;">(max 200 characters)</span> </label>
+	                        	<label for="inputEmail3" class="col-md-2 control-label">Permanent Address <br> <span style="color: red;font-weight: normal;">(max 165 characters)</span> </label>
 	                            <div class="col-md-3">
-	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_per_add_house_no" id="rm_child_per_add_house_no" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_per_add_house_no'])?>" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" maxlength="150"/>
+	                            	<textarea  class="form-control cust_ip_border" name="rm_child_per_add_house_no" id="rm_child_per_add_house_no" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" row="3" maxlength="165"><?php echo (empty($student_data)?'':$student_data[0]['rm_child_per_add_house_no'])?></textarea>
 	                            </div>
 	                            <div class="col-md-3">
 	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_per_add_town" id="rm_child_per_add_town" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_per_add_town'])?>" placeholder="TOWN / CITY" title="Town ? City"/>
@@ -142,11 +142,11 @@
                         	<br>
 	                        <div class="form-group">
 	                        	<div class="col-md-2">
-	                                <label class="control-label">Temporary Address</label>
+	                                <label class="control-label">Temporary Address <br> <span style="color: red;font-weight: normal;">(max 165 characters)</span></label><br>
 	                                <b>Same as above</b>&nbsp;<input type="checkbox" class="add_copy" name="rm_child_tmp_add_same_as_per">
 	                            </div>
 	                            <div class="col-md-3">
-	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_temp_add_house_no" id="rm_child_temp_add_house_no" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_temp_add_house_no'])?>" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" maxlength="150"/>
+	                                <textarea  class="form-control cust_ip_border" name="rm_child_temp_add_house_no" id="rm_child_temp_add_house_no" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" row="3" maxlength="165"><?php echo (empty($student_data)?'':$student_data[0]['rm_child_temp_add_house_no'])?></textarea>
 	                            </div>
 
 	                            <div class="col-md-3">
@@ -205,31 +205,41 @@
 	                                <label class="control-label">Please Attach Latest Photograph of</label>
 	                            </div>
 	                            <div class="col-md-2" >
-	                                <label class="control-label">Child Photo ( jpg, jpeg )</label>
-	                                    <input type="file" class="form-control"  id="rm_child_photo" name="rm_child_photo"  title="Child" onchange="putImage('rm_child_photo','child_target')" style="border: none;padding: 5px 0px;">
-	                                    <input type="text" name="rm_child_photo_path" value="<?php echo (empty($student_data[0]['rm_child_photo'])?"":$student_data[0]['rm_child_photo']) ?>" style="border:none;font-size: 10px;width: 100%;" readonly/>
-	                                    
-	                                    <?php 
-	                                    	if (!empty($student_data)):
-	                                     ?>
-	                                    	<img id="child_target" src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_photo'] ?>" class="img-responsive" onclick="open_model_img(this,'CHILD PHOTO')"/>
-	                                    <?php 
-	                                    	endif;
-	                                     ?>
+	                                <label class="control-label">Child Photo (jpg, jpeg )</label>
+									<input type="file" class="form-control"  id="rm_child_photo" name="rm_child_photo"  title="Child" onchange="putImage('rm_child_photo','child_target')" style="border: none;padding: 5px 0px;">
+									<input type="text" name="rm_child_photo_path" value="<?php echo (empty($student_data[0]['rm_child_photo'])?"":$student_data[0]['rm_child_photo']) ?>" style="border:none;font-size: 10px;width: 100%;" readonly/>
+									
+									<?php 
+										if (!empty($student_data)):
+										?>
+										<img id="child_target" src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_photo'] ?>" class="img-responsive" onclick="open_model_img(this,'CHILD PHOTO')"/>
+									<?php 
+										endif;
+									?>
 	                            </div>
-	                           
 	                            <div class="col-md-2" >
-	                                	<label class="control-label">Family Photo ( jpg, jpeg )</label>
-	                                    <input type="file" class="form-control" id="rm_child_family_photo" name="rm_child_family_photo" title="Family" onchange="putImage('rm_child_family_photo','family_target')" style="border: none;padding: 5px 0px;">
-	                                    <input type="text" name="rm_child_family_photo_path" value="<?php echo (empty($student_data[0]['rm_child_family_photo'])?"":$student_data[0]['rm_child_family_photo']) ?>" style="border:none;font-size: 10px;width: 100%;" readonly/>
-	                                     <?php 
-	                                    	if (!empty($student_data)):
-	                                     ?>
-
-	                                    	<img src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_family_photo'] ?>" id="family_target" class="img-responsive" onclick="open_model_img(this,'FAMILY PHOTO')"/>
-	                            		<?php 
-	                                    	endif;
-	                                     ?>
+									<label class="control-label">Mother Photo (jpg, jpeg )</label>
+									<input type="file" class="form-control" id="rm_child_mother_photo" name="rm_child_mother_photo" title="Mother" onchange="putImage('rm_child_mother_photo','mother_target')" style="border: none;padding: 5px 0px;">
+									<input type="text" name="rm_child_mother_photo_path" value="<?php echo (empty($student_data[0]['rm_child_mother_photo'])?"":$student_data[0]['rm_child_mother_photo']) ?>" style="border:none;font-size: 10px;width: 100%;" readonly/>
+									<?php 
+										if (!empty($student_data)):
+									?>
+										<img src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_mother_photo'] ?>" id="mother_target" class="img-responsive" onclick="open_model_img(this,'MOTHER PHOTO')"/>
+									<?php 
+										endif;
+									?>
+	                            </div>
+								<div class="col-md-2" >
+									<label class="control-label">Father Photo (jpg, jpeg )</label>
+									<input type="file" class="form-control" id="rm_child_father_photo" name="rm_child_father_photo" title="Father" onchange="putImage('rm_child_father_photo','father_target')" style="border: none;padding: 5px 0px;">
+									<input type="text" name="rm_child_father_photo_path" value="<?php echo (empty($student_data[0]['rm_child_father_photo'])?"":$student_data[0]['rm_child_father_photo']) ?>" style="border:none;font-size: 10px;width: 100%;" readonly/>
+									<?php 
+										if (!empty($student_data)):
+									?>
+										<img src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_father_photo'] ?>" id="father_target" class="img-responsive" onclick="open_model_img(this,'FATHER PHOTO')"/>
+									<?php 
+										endif;
+									?>
 	                            </div>
 	                            <div class="col-md-2">
 	                                <label class="control-label">Birth Certificate ( pdf )</label>  
@@ -238,14 +248,12 @@
 	                                <?php 
 	                                    if (!empty($student_data)):
 	                                ?>
-	                                    
 	                                    <p style="margin-top: 20px;"> PDF FILE : 
 	                                		<a href="<?php echo base_url('public/uploads/product/'.$student_data[0]['rm_child_birth_certi_photo']) ?>" target="_blank">
 	                                			<?php echo $student_data[0]['rm_child_birth_certi_photo'] ?>
 	                                		</a>
 	                                	</p>
-
-	                                <!-- <img src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_birth_certi_photo'] ?>" id="birth_target" class="img-responsive" onclick="open_model_img(this,'BIRTH CERTIFICATE')"/> -->
+										<!-- <img src="<?php echo base_url('public/uploads/product/'); ?><?php echo "/".$student_data[0]['rm_child_birth_certi_photo'] ?>" id="birth_target" class="img-responsive" onclick="open_model_img(this,'BIRTH CERTIFICATE')"/> -->
 	                                <?php 
 	                                	endif;
 	                                ?>
@@ -278,7 +286,6 @@
 	                        <br>
 	                        <br>
 					</div>
-
 					<div class="tab-pane" id="a2a" style="margin-top: 30px;">
 		          			<div class="form-group">
 	                            <label class="col-md-2 control-label">Father's Name</label>
@@ -331,7 +338,7 @@
 	                        <div class="form-group">
 	                            <label class="col-md-2 control-label">Office Address</label>
 	                            <div class="col-md-3">
-	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_family_office_add" id="rm_child_family_office_add" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_family_office_add'])?>" placeholder="HOUSE NO.,STREET NAME" title="House no.,Street Name"/>
+	                                <textarea  class="form-control cust_ip_border" name="rm_child_family_office_add" id="rm_child_family_office_add" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" row="3" maxlength="165"><?php echo (empty($student_data)?'':$student_data[0]['rm_child_family_office_add'])?></textarea>
 	                            </div>
 
 	                            <div class="col-md-3">
@@ -341,7 +348,7 @@
 	                            <div class="col-md-3">
 	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_family_office_add_pin_code" id="rm_child_family_office_add_pin_code" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_family_office_add_pin_code'])?>" placeholder="PINCODE" title="Pincode"/>
 	                            </div>
-	                            <div class="col-md-3 col-md-offset-2">
+	                            <div class="col-md-3">
 	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_family_office_add_state" id="rm_child_family_office_add_state" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_family_office_add_state'])?>" placeholder="STATE" title="State"/>
 	                            </div>
 	                        </div>
@@ -519,7 +526,7 @@
 	                        <div class="form-group">
 	                            <label class="col-md-2 control-label">Office Address</label>
 	                            <div class="col-md-3">
-	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_guardian_office_add" id="rm_child_guardian_office_add" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_guardian_office_add'])?>" placeholder="HOUSE NO.,STREET NAME" title="House no.,Street Name"/>
+	                                <textarea  class="form-control cust_ip_border" name="rm_child_guardian_office_add" id="rm_child_guardian_office_add" placeholder="HOUSE No., STREET NAME" title="House no.,Street Name" row="3" maxlength="165"><?php echo (empty($student_data)?'':$student_data[0]['rm_child_guardian_office_add'])?></textarea>
 	                            </div>
 
 	                            <div class="col-md-3">
@@ -529,7 +536,7 @@
 	                            <div class="col-md-3">
 	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_guardian_office_add_pin_code" id="rm_child_guardian_office_add_pin_code" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_guardian_office_add_pin_code'])?>" placeholder="PINCODE" title="Pincode"/>
 	                            </div>
-	                            <div class="col-md-3 col-md-offset-2">
+	                            <div class="col-md-3 ">
 	                            	<input type="text" class="form-control cust_ip_border" name="rm_child_guardian_office_add_state" id="rm_child_guardian_office_add_state" value="<?php echo (empty($student_data)?'':$student_data[0]['rm_child_guardian_office_add_state'])?>" placeholder="STATE" title="State"/>
 	                            </div>
 	                        </div>

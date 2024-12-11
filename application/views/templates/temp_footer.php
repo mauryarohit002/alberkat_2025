@@ -1,10 +1,18 @@
 
-
-    
     <div class='control-sidebar-bg'></div>
 
     </div><!-- ./wrapper -->
-
+    <?php
+    $currentYear = date("Y");
+    $lastYear = $currentYear - 1;
+    ?>
+    <?php if(empty($this->uri->segments[1]) || ($this->uri->segments[1]=='chome' && (empty($this->uri->segments[2]) || $this->uri->segments[2] == 'user_login' || $this->uri->segments[2] == 'search'))): ?>
+    <footer class="bg-black text-center" style="position: absolute; bottom: 0; width: 100%; padding: 1rem;">
+    <div>
+        <p style="margin-bottom: 0;font-size: 1.5rem;">© <?= $lastYear ?>-<?= $currentYear ?> All Rights Reserved Al Barkaat</p>
+    </div>
+    </footer>
+    <?php endif;?>
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo assets('plugins/jQuery/jQuery-2.1.4.min.js')?>"></script>
     <!-- Bootstrap 3.3.2 JS -->
@@ -42,7 +50,7 @@
         $("#loader").hide();
     </script>
     <!-- User JS Files -->
-    <script src="<?php echo assets('js/common.js?v=1')?>" type="text/javascript"></script>
+    <script src="<?php echo assets('js/common.js?v=3')?>" type="text/javascript"></script>
 
     <script src="<?php echo assets('js/master.js?v=1')?>" type="text/javascript"></script>
     <script src="<?php echo assets('js/login.js?v=1')?>"></script>

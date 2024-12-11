@@ -110,7 +110,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			<td style="width:15%">
 				<img src="<?php echo uploads($app[0]['rm_child_family_photo'])?>" style="width:95px;height:120px;">
 				<br>
-				<span style="font-size:7px;text-align:center">FAMILY PHOTO</span>
+				<span style="font-size:7px;text-align:center">FAMILY PHOTO </span>
 			</td>
 		</tr>
 	</table>

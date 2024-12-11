@@ -311,16 +311,16 @@
 				{
 					$rm_sd_photo_child = $formdata['rm_child_photo_path'];
 				}
-				if($img_data['rm_child_family_photo']['error'] == 0)
+				if($img_data['rm_child_mother_photo']['error'] == 0)
 				{
-					$ext = pathinfo($img_data['rm_child_family_photo']['name'], PATHINFO_EXTENSION);
-					$rm_sd_photo_family = time().'_'.pathinfo($img_data['rm_child_family_photo']['name'],PATHINFO_FILENAME);
-					$rm_sd_photo_family = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_family).'.'.$ext;
-					$config['file_name'] = $rm_sd_photo_family;
+					$ext = pathinfo($img_data['rm_child_mother_photo']['name'], PATHINFO_EXTENSION);
+					$rm_sd_photo_mother = time().'_'.pathinfo($img_data['rm_child_mother_photo']['name'],PATHINFO_FILENAME);
+					$rm_sd_photo_mother = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_mother).'.'.$ext;
+					$config['file_name'] = $rm_sd_photo_mother;
 					$this->upload->initialize($config);
-					if (!$this->upload->do_upload('rm_child_family_photo'))
+					if (!$this->upload->do_upload('rm_child_mother_photo'))
 					{
-						$rm_sd_photo_family = "no_image.jpg";
+						$rm_sd_photo_mother = "no_image.jpg";
 					}
 					else
 					{
@@ -338,7 +338,36 @@
 				}
 				else
 				{
-					$rm_sd_photo_family = $formdata['rm_child_family_photo_path'];
+					$rm_sd_photo_mother = $formdata['rm_child_mother_photo_path'];
+				}
+				if($img_data['rm_child_father_photo']['error'] == 0)
+				{
+					$ext = pathinfo($img_data['rm_child_father_photo']['name'], PATHINFO_EXTENSION);
+					$rm_sd_photo_father = time().'_'.pathinfo($img_data['rm_child_father_photo']['name'],PATHINFO_FILENAME);
+					$rm_sd_photo_father = str_replace([" ",'.','-',"'","(",")","&"], "_", $rm_sd_photo_father).'.'.$ext;
+					$config['file_name'] = $rm_sd_photo_father;
+					$this->upload->initialize($config);
+					if (!$this->upload->do_upload('rm_child_father_photo'))
+					{
+						$rm_sd_photo_father = "no_image.jpg";
+					}
+					else
+					{
+						$full_path = $this->upload->data('full_path');
+						$config_thumb['image_library'] 	= 'gd2';
+						$config_thumb['source_image'] 	= $full_path;
+						$config_thumb['maintain_ratio'] 	= TRUE;
+						$config_thumb['width']         	= 120;
+						$config_thumb['height']       	= 180;
+						$this->load->library('image_lib');
+						$this->image_lib->initialize($config_thumb);
+						$this->image_lib->resize();
+						$this->image_lib->clear();
+					}
+				}
+				else
+				{
+					$rm_sd_photo_father = $formdata['rm_child_father_photo_path'];
 				}
 				if($img_data['rm_child_birth_certi_photo']['error'] == 0)
 				{
@@ -429,7 +458,8 @@
 					$reg_master['rm_child_pre_school_name'] 		= strtoupper($formdata['rm_child_pre_school_name']);
 				}
 				$reg_master['rm_child_photo'] 					= $rm_sd_photo_child;
-				$reg_master['rm_child_family_photo'] 			= $rm_sd_photo_family;
+				$reg_master['rm_child_mother_photo'] 			= $rm_sd_photo_mother;
+				$reg_master['rm_child_father_photo'] 			= $rm_sd_photo_father;
 				$reg_master['rm_child_birth_certi_photo'] 		= $rm_sd_photo_birth_cert;
 				$reg_master['rm_child_aadhar_card_photo'] 		= $rm_sd_photo_aadhar;
 				$reg_master['rm_child_father_middle_name'] 		= strtoupper($formdata['rm_child_father_middle_name']);
@@ -579,7 +609,7 @@
 				'mer_trans_ref'	=> 'AL-Barkaat Malik Mohammad Islam English',
 				'mer_id' 		=> MERCHANT_ID,
 				'order_no'		=> $appno,
-				'reg_amt' 		=> '100500'
+				'reg_amt' 		=> '100600'
 			);
 			$this->load->view('paygateway/pay_order_form',$arr);
 		}

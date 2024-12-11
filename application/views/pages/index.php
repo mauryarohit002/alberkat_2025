@@ -94,7 +94,7 @@
           background-color: #717171;
         }
 
-/* Fading animation */
+    /* Fading animation */
     </style>
    <!--  <div style="margin-top: -16px;" class="">
         <div id="carousel-example" class="carousel slide container-fluid" data-ride="carousel">
@@ -129,7 +129,7 @@
     </div> -->
 
   <!-- Full-width images with number and caption text -->
-    <div style="margin-top: -15px;">
+    <div style="margin-top: -15px;position:relative">
       <div class="mySlides animated rotateInDownLeft">
         <img src="<?php echo assets('images/banner1.png')?>" style="width:100%">
       </div>
@@ -138,11 +138,11 @@
         <img src="<?php echo assets('images/banner2.png')?>" style="width:100%">
       </div>
 
-      <div class="mySlides animated rotateInDownLeft">
-        <img src="<?php echo assets('images/banner3.png')?>" style="width:100%">
-      </div>
+      <!--<div class="mySlides animated rotateInDownLeft">-->
+      <!--  <img src="<?php echo assets('images/banner3.png')?>" style="width:100%">-->
+      <!--</div>-->
 
-      <div class="mySlides animated rotateInDownRight">
+      <div class="mySlides animated rotateInDownRight" data-delay="40000">
         <img src="<?php echo assets('images/banner4.png')?>" style="width:100%">
       </div>
 
@@ -161,22 +161,29 @@
     <br>
     <!-- The dots/circles -->
 
-    <script type="text/javascript">
-        var slideIndex = 0;
-        showSlides();
+<script type="text/javascript">
+    var slideIndex = 0;
+    showSlides();
 
-        function showSlides() {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}
-          slides[slideIndex-1].style.display = "block";
-          setTimeout(showSlides, 3000); // Change image every 2 seconds
-        }
-    </script>
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      if (slideIndex === 3){
+        setTimeout(showSlides, 180000);
+      } else {
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+      }
+    }
+    plusSlides = function(n) {
+      showSlides(slideIndex += n); 
+    }
+</script>
 <?php
 	$this->load->view('templates/temp_footer');
 ?>

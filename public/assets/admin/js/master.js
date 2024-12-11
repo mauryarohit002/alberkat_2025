@@ -51,7 +51,7 @@
     function preview_student(id)
     {
         var path = base_url+"admin/cmaster/get_student_data_fr_preview/"+id;
-        var img_logo = base_url+'public/assets/images/albarkaat_letter_head2.jpg';
+        var img_logo = base_url+'public/assets/images/albarkaat_letter_head3.jpg';
         $.ajax({
             type:'POST',
             url:path,
@@ -60,34 +60,63 @@
             {
                 console.log(resp);
                 var img_child = base_url+'public/uploads/product/'+resp['user_data'][0]['rm_child_photo'];
-                var img_parent = base_url+'public/uploads/product/'+resp['user_data'][0]['rm_child_family_photo'];
+                var img_mother = base_url+'public/uploads/product/'+resp['user_data'][0]['rm_child_mother_photo'];
+                var img_father = base_url+'public/uploads/product/'+resp['user_data'][0]['rm_child_father_photo'];
                 var child_name = resp['user_data'][0]['rm_child_surname']+' '+resp['user_data'][0]['rm_child_name']+' '+resp['user_data'][0]['rm_child_father_name'];
                 var appno = resp['user_data'][0]['rm_app_no'];
                 var data = '';
                 data += '<div class="container-fluid">';
                 data += '<div class="row">';
-                data += '<div class="col-sm-8">';
+                data += '<div class="col-sm-12">';
                 data += '<h5 class="iso"> <span style="float:left;">C.B.S.E. AFFILIATION NO. 1130375</span> An ISO : 9001 - 2015 Certified School</h5>';
                 data += '<img src="'+img_logo+'" alt="" class="img-responsive">';
                 data += '</div>';
-                data += '<div class="col-sm-2">';
-                data += '<img src="'+img_child+'" alt="" class="img-responsive" style="height: 180px;">';
-                data += '<p class="text-center">child photo</p>';
+                // data += '<div class="col-sm-2">';
+                // data += '<img src="'+img_child+'" alt="" class="img-responsive" style="height: 180px;">';
+                // data += '<p class="text-center">child photo</p>';
+                // data += '</div>';
+                // data += '<div class="col-sm-2">';
+                // data += '<img src="'+img_parent+'" alt="" class="img-responsive" style="height: 180px;">';
+                // data += '<p class="text-center">parent photo</p>';
+                // data += '</div>';
+                data += '</div>';
+                data += '<div class="row">';
+                data += '<div class="col-sm-3">';
+                data += '<canvas id="barcode"></canvas>';
+                data += '</div>';
+                data += '<div class="col-sm-7">';
+                data += '<h3 class="text-center" style="font-weight: bold;text-decoration: underline;">ONLINE APPLICATION FORM 2025-2026</h3>';
                 data += '</div>';
                 data += '<div class="col-sm-2">';
-                data += '<img src="'+img_parent+'" alt="" class="img-responsive" style="height: 180px;">';
-                data += '<p class="text-center">parent photo</p>';
                 data += '</div>';
                 data += '</div>';
                 data += '<div class="row">';
                 data += '<div class="col-sm-4">';
-                data += '<canvas id="barcode"></canvas>';
+                data += '<h4 class="text-center" style="font-weight: bold;">PEN ID:</h4><br>';
+                data += '<div style="border-bottom:1px solid #000;">&nbsp;</div>';
                 data += '</div>';
                 data += '<div class="col-sm-4">';
-                data += '<h3 class="text-center" style="font-weight: bold;text-decoration: underline;">ONLINE APPLICATION FORM</h3>';
+                data += '<h4 class="text-center" style="font-weight: bold;">GR. NO: </h4><br>';
+                data += '<div style="border-bottom:1px solid #000;">&nbsp;</div>';
                 data += '</div>';
                 data += '<div class="col-sm-4">';
+                data += '<h4 class="text-center" style="font-weight: bold;">STD/DIV:</h4><br>';
+                data += '<div style="border-bottom:1px solid #000;">'+resp['user_data'][0]['rm_child_class']+'</div>';
+                data += '</div>'; 
+                data += '</div><br>';
+                data += '<div class="row">';
+                data += '<div class="col-sm-4">';
+                data += '<div style="border:1px solid #000;height:250px;text-align: center;"><img src="'+img_child+'" alt="" class="img-responsive" style="height: 248px;"></div>';
+                data += '<p class="text-center" >CHILD PHOTO</p>';
                 data += '</div>';
+                data += '<div class="col-sm-4">';
+                data += '<div style="border:1px solid #000;height:250px;text-align: center;"><img src="'+img_father+'" alt="" class="img-responsive" style="height: 248px;"></div>';
+                data += '<p class="text-center" >FATHER PHOTO</p>';
+                data += '</div>';
+                data += '<div class="col-sm-4">';
+                data += '<div style="border:1px solid #000;height:250px;text-align: center;"><img src="'+img_mother+'" alt="" class="img-responsive" style="height: 248px;"></div>';
+                data += '<p class="text-center" >MOTHER PHOTO</p>';
+                data += '</div>'; 
                 data += '</div>';
                 data += '<div class="container-fluid">';
                 data += '<div class="row">';
@@ -255,7 +284,7 @@
                 data += '<p><b>h]  </b> Parents are requested to abstain themselves from involvement, participation, or association with any group, either offline or online, that is politically/socially motivated and harbors malicious intentions to discredit the institution’s reputation.</p>';
                 data += '<p><b>i]  </b> Parents are requested to ensure the punctuality of their children, especially those who employ private or third-party transportation services to drop them off and pick them up from the school.</p>';
                 data += '<p><b>j]  </b> As the school does not offer any transportation services, parents are at liberty to either personally drop off and pick up their child from the school or engage the services of any private or third-party transportation at their own risk and cost. The school, will not assume any responsibility in the event of any untoward incident that may occur during transportation.</p>';
-                data += '<p><b>k]  </b> The school fees referenced in the Application Form are subject to change from time to time at the discretion of the management without any prior notification. At present the fees structure for new admission for academic year <b>2025-2026</b> of pre-primary section (Nursery/Junior/Senior), is Rs: 55100/- Per Annum, w.e.f. April -2025 to March-2026.</p>';
+                data += '<p><b>k]  </b> The school fees referenced in the Application Form are subject to change from time to time at the discretion of the management without any prior notification. At present the fees structure for new admission for academic year <b>2025-2026</b> of pre-primary section (Nursery/Junior/Senior), is Rs: 58600/- Per Annum, w.e.f. April-2025 to March-2026.</p>';
                 data += '<p><b>l] </b> The school management is at liberty to add to, amend, vary, alter and/or rescind any of the instructions mentioned hereinabove.</p>';
                 data += '</td>';
                 data += '</tr>';
@@ -313,9 +342,13 @@
             }
         });
     }
-    function print_student(id)
+    function print_student(id,without=0)
     {
-        window.open(base_url+"admin/cmaster/print_student_app/"+id,'newwindow1','width=1024, height=768');
+        if(without==1){
+            window.open(base_url+"admin/cmaster/print_student_app/"+id+"/1",'newwindow1','width=1024, height=768');
+        }else{
+            window.open(base_url+"admin/cmaster/print_student_app/"+id,'newwindow1','width=1024, height=768');
+        }
     }
     function print_teach_form(id)
     {

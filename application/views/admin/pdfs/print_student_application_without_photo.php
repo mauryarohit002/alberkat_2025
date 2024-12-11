@@ -156,15 +156,15 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 		
 		<tr>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_photo'])?>" style="width:132px;height:170px;">
+				<br><br><br><br><br><br>CHILD PHOTO
 			</td>
 			<td style="width:10%;"></td>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_father_photo'])?>" style="width:132px;height:170px;">
+				<br><br><br><br><br><br>FATHER PHOTO
 			</td>
 			<td style="width:9%;"></td>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_mother_photo'])?>" style="width:132px;height:170px;">
+				<br><br><br><br><br><br>MOTHER PHOTO
 			</td>
 		</tr>
 		<tr>
@@ -581,7 +581,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
         </tr>
         <tr>
         	<td style="font-size:10px; width: 4%;font-weight: bold;">h]</td>
-        	<td style="font-size:10px; width: 96%;">Parents are requested to abstain themselves from involvement, participation, or association with any group, either offline or online, that is politically/socially/religiously motivated and harbors malicious intentions to discredit the school's reputation.</td>
+        	<td style="font-size:10px; width: 96%;">Parents are requested to abstain themselves from involvement, participation, or association with any group, either offline or online, that is  politically/socially/religiously motivated and harbors malicious intentions to discredit the school's reputation.</td>
         </tr>
         <tr>
         	<td style="font-size:10px; width: 4%;font-weight: bold;">i]</td>
@@ -930,7 +930,6 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 	<!--</table>-->
 	<br>
 	<br>
-
 	<table>
 		<tr>
 			<td>
@@ -945,7 +944,6 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			<td width="19%" class="pr_title_bt" style="border: none;"><b>VERIFICATION TIME:</b></td><td width="25%" style="text-align:left;border-bottom: 1px solid #000;"> </td>
 		</tr>
 	</table>
-	
 	<br>
 	<br>
 	<table border="1" cellpadding="5">
@@ -990,7 +988,6 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 		    <td>Signature:_________________</td>
 		</tr>
 	</table>
-	
 	<?php
 
 		$content = ob_get_contents();

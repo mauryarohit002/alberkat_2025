@@ -54,7 +54,7 @@
     <!-- User JS Files -->
     <script src="<?php echo assets('admin/js/common.js')?>" type="text/javascript"></script>
     <script src="<?php echo assets('admin/js/select2.js')?>" type="text/javascript"></script>
-    <script src="<?php echo assets('admin/js/master.js?v=6')?>" type="text/javascript"></script>
+    <script src="<?php echo assets('admin/js/master.js?v=7')?>" type="text/javascript"></script>
     <script src="<?php echo assets('admin/js/stock.js')?>" type="text/javascript"></script>
     <script src="<?php echo assets('admin/js/report.js')?>" type="text/javascript"></script>
 

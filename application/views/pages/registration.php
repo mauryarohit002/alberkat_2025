@@ -11,7 +11,7 @@
 				  		<h4 class="text-center" style="margin-bottom: 30px;font-weight: bold;">GENERAL TERMS & CONDITIONS</h4>
 					   	<p style="text-align: justify-all;">
 					   		<b>1.</b>	The online application portal for Nursery will start from 16th December 2024 on the mentioned link: https://albarkaatadmissions.com/2025.<br/>
-					   		<b>The above mentioned link will open on 16th Dec-24 @ 11 am & will close on 31th Jan-24 @ 4 pm.</b>
+					   		<b>The above mentioned link will open on 16th Dec-24 @ 11 am & will close on 31th Jan-25 @ 4 pm.</b>
 					   	</p>
 					   	<p style="text-align: justify-all;">
 							<b>2.</b>	Please read the instructions carefully before filling the online application.
@@ -49,9 +49,9 @@
 							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp and size of 4.5 cm(L) X 3.5 cm(B) cm only to be properly uploaded in applicant’s photo place.
 					   	</p>
 					   		<p style="text-align: justify-all;">
-							&nbsp&nbsp&nbsp e.	Father  & Mother Joint coloured photograph in (JPEG Format only) with white background
+							&nbsp&nbsp&nbsp e.	Father  & Mother coloured photograph in (JPEG Format only) with white background
 							<br/>
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp and size of   6.5 cm (L) X 4.5 cm (B) only to be properly uploaded in parents photo place.
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp and size of   4.5 cm (L) X 3.5 cm (B) only to be properly uploaded in parents photo place.
 					   	</p>
 					   	</p>
 					   		<p style="text-align: justify-all;">

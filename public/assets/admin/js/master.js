@@ -101,7 +101,7 @@
                 data += '</div>';
                 data += '<div class="col-sm-4">';
                 data += '<h4 class="text-center" style="font-weight: bold;">STD/DIV:</h4><br>';
-                data += '<div style="border-bottom:1px solid #000;">'+resp['user_data'][0]['rm_child_class']+'</div>';
+                data += '<div style="border-bottom:1px solid #000;text-align:center;">'+resp['user_data'][0]['rm_child_class']+' - </div>';
                 data += '</div>'; 
                 data += '</div><br>';
                 data += '<div class="row">';

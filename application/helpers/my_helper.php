@@ -71,7 +71,7 @@
 			$pdf = $path;
 			// $url = "https://mrsms.in/api/send?instance_id=6602B1F6EE034&access_token=65feb8a814055&type=media&number=$mob&message=$msg&media_url=$pdf&filename=$file_name";
 
-			$url = "https://enotify.app/api/sendFileWithCaption?token=$instanceid&phone=$mob&file=$pdf&message=$msg";
+			$url = "https://enotify.app/api/sendFileWithCaption?token=$instanceid&phone=$mob&link=$pdf&message=$msg";
 			$output = json_decode(@file_get_contents($url), true);
 			return (isset($output['status']) && $output['status'] == 'success') ? ['status' => TRUE, 'data' => TRUE, 'msg' => 'Whatsapp message send successfully'] : ['status' => FALSE, 'data' => FALSE, 'msg' =>''];
 		}

@@ -710,7 +710,7 @@
 					if(!empty($result['app']) && !empty($result['app'][0]['rm_child_family_email_id'])){
 			            $option = [];
 						$option['message'] = "Dear Parents,<br/> please find below attachment of online application form <br/><br/> Regard <br/> albarkaat team";
-						$option['to'] = $data[0]['rm_child_family_email_id'];
+						$option['to'] = $result['app'][0]['rm_child_family_email_id'];
 						$option['subject'] = " Application form number".$result['app'][0]['rm_app_no'];
 						$option['attachment'] = $file_path;
 						$mail_output = @send_mail($option);

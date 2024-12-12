@@ -153,18 +153,17 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 	        <td style="width:27%;text-align:center;border-bottom: 1px solid #000;font-size: 13px;"><?php echo $app[0]['rm_child_class']?> - </td>
 	    </tr>
 	    <br>
-		
 		<tr>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_photo'])?>" style="width:132px;height:170px;">
+				<img src="<?php echo uploads($app[0]['rm_child_photo']);?>" style="width:132px;height:160px;">
 			</td>
 			<td style="width:10%;"></td>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_father_photo'])?>" style="width:132px;height:170px;">
+				<img src="<?php echo uploads($app[0]['rm_child_father_photo']);?>" style="width:132px;height:160px;">
 			</td>
 			<td style="width:9%;"></td>
 			<td style="width:27%;border:1px solid #000;height:160px;text-align:center;">
-			<img src="<?php echo uploads($app[0]['rm_child_mother_photo'])?>" style="width:132px;height:170px;">
+				<img src="<?php echo uploads($app[0]['rm_child_mother_photo']);?>" style="width:132px;height:160px;">
 			</td>
 		</tr>
 		<tr>
@@ -227,16 +226,18 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 		</tr>
 	
 		
-		</table>
-
-		<?php
-
+	</table>
+	
+	
+	<?php
+		
 		$content = ob_get_contents();
+		
 		ob_end_clean();
 		$obj_pdf->writeHTML($content, false, false, false, false, '');
-	// $content = ob_get_contents();
-	// ob_end_clean();
-
+		// $content = ob_get_contents();
+		// ob_end_clean();
+		
 		$obj_pdf->AddPage(2);
 		ob_start();
 
@@ -460,7 +461,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
   <!--          </td>-->
 		<!--</tr>-->
 	</table>
-
+	
 <?php
 
 		$content = ob_get_contents();
@@ -759,7 +760,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			<td width="50%" style="text-align: right;font-weight: bold;">Mother's Signature</td> -->
 		</tr>
 	</table>
-
+	
 
 	<?php
 
@@ -1165,7 +1166,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			</td>
 		</tr>
 	</table>
-
+	
 <?php
 	$content = ob_get_contents();
 	ob_end_clean();

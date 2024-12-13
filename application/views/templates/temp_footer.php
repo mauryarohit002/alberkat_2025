@@ -50,7 +50,7 @@
         $("#loader").hide();
     </script>
     <!-- User JS Files -->
-    <script src="<?php echo assets('js/common.js?v=4')?>" type="text/javascript"></script>
+    <script src="<?php echo assets('js/common.js?v=5')?>" type="text/javascript"></script>
 
     <script src="<?php echo assets('js/master.js?v=1')?>" type="text/javascript"></script>
     <script src="<?php echo assets('js/login.js?v=1')?>"></script>

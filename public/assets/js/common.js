@@ -1110,6 +1110,11 @@ function add_siblings_row()
     {
         $("#st_div").css({'border-color':'#CCC'});
     }
+    let trlen = $(`#siblings_wrapper tr`).length;
+    if(trlen>=3){
+        check = 0;
+        alert("Already two siblings added! A maximum of two siblings can be added.");
+    }
     if(check == 1)
     {
         var st_school   = $("#st_school").val();

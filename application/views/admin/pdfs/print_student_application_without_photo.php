@@ -1090,7 +1090,6 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 		<tr><td width="30%" class="pr_title_bt"><b>PARENT'S OBSERVATION REPORT :</b></td><td width="70%" style="text-align:left;border-bottom: 1px solid #000;"> </td></tr>
 		<tr><td style="border-bottom: 1px solid #000;"><br><br></td><td  style="border-bottom: 1px solid #000;"> </td></tr>
 		<tr><td style="border-bottom: 1px solid #000;"><br><br></td><td  style="border-bottom: 1px solid #000;"> </td></tr>
-		<tr><td style="border-bottom: 1px solid #000;"><br><br></td><td  style="border-bottom: 1px solid #000;"> </td></tr>
 	</table>
 	<br>
 	<br>
@@ -1159,6 +1158,17 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			<td>
 				<br>
 				<span class="pr_title_bt" style="font-size: 11px;text-align: right;">SCHOOL SEAL STAMP</span>
+			</td>
+		</tr>
+		<br>
+		<br>
+		<br>
+		<tr>
+			<td width="50%">
+				<span class="pr_title_bt" style="font-size: 11px;">FEES PAID ON : </span>
+			</td>
+			<td width="50%">
+				<span class="pr_title_bt" style="font-size: 11px;">CHECKED BY : </span>
 			</td>
 		</tr>
 	</table>

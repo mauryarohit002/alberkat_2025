@@ -399,7 +399,7 @@
 	                        </div>
                         	<br>
                           	<h4 style="color:white;text-align:center;font-size:18px;color:#C9766E;padding:15px;font-weight:bold;">Information about child's siblings</h4>
-                         	<p style="text-align: center;font-weight: bold;color: red">(Note : to be filled only if child is studying in AL-BARKAAT Malik Muhammad Islam English School)</p>	
+                         	<p style="text-align: center;font-weight: bold;color: red">(Note : to be filled only if child is studying in AL-BARKAAT Malik Muhammad Islam English School. A maximum of two siblings can be added.)</p>	
 
 	                        <div class="col-sm-10 col-sm-offset-1">
 	                            <table class="table table-bordered" >
@@ -612,7 +612,7 @@
 <?php
 	$this->load->view('admin/templates/footer');
 ?>
-<script src="<?php echo assets('admin/js/registration.js?v=1')?>" type="text/javascript"></script>
+<script src="<?php echo assets('admin/js/registration.js?v=2')?>" type="text/javascript"></script>
 <?php 
 echo "<script>";
 echo "cs_frow_cnt = $sibling_cnt;";

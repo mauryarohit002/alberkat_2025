@@ -91,7 +91,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 	}
 
 </style>
-<table class="marg">
+	<table class="marg">
 		<tr>
 			<td style="">
 				<h5><span style="text-align:left;color:#333;">C.B.S.E. AFFILIATION NO. 1130375</span> 
@@ -104,7 +104,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 				
 			</td>
 		</tr>
-			<tr>
+		<tr>
 			<td colspan="2" style="width:100%">
 				
 				<img src="<?php echo assets('images/albarkaat_letter_head3.jpg')?>">
@@ -309,7 +309,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 
 </style>
 
-		<table >
+	<table >
 		<tr>
 			<td style="width:35%">
 				<tcpdf method="write1DBarcode" params="<?php echo $params?>" />
@@ -403,8 +403,6 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 			<td class="pr_data"><?= $app[0]['rm_child_pre_school_name']?></td>
 		</tr>
 	</table>
-
-
 
 	<table cellpadding="6" class="table table-striped">
 		<tr class="headline"><td class="pr_header" colspan="5"><h4 class="header_title">Student Siblings Details</h4></td></tr>
@@ -525,7 +523,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 
 </style>
 
-		<table>
+	<table>
 		<tr>
 			<td style="width:35%">
 				<tcpdf method="write1DBarcode" params="<?php echo $params?>" />
@@ -682,7 +680,7 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 	</table>
 	<br>
 	<br>
-		<table>
+	<table>
 		<tr>
 			<td width="20%" class="pr_title_bt" ><b>FATHER'S SIGNATURE :</b></td>
 			<td width="20%" style="text-align:left;border-bottom: 1px solid #000;"></td>

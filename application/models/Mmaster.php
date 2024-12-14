@@ -13,7 +13,7 @@
 			$record = $this->db->query("SELECT MAX(rm_app_no) as max_no FROM registration_master")->result_array();
 			if(empty($record[0]['max_no']))
 			{
-				return 012425;
+				return 0125;
 			}
 			else
 			{

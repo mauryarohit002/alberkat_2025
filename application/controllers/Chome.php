@@ -609,7 +609,7 @@
 				'mer_trans_ref'	=> 'AL-Barkaat Malik Mohammad Islam English',
 				'mer_id' 		=> MERCHANT_ID,
 				'order_no'		=> $appno,
-				'reg_amt' 		=> '100600'
+				'reg_amt' 		=> '102000'
 			);
 			$this->load->view('paygateway/pay_order_form',$arr);
 		}

@@ -5,7 +5,8 @@
 	$title = "APP".$app[0]['rm_app_no'].$app[0]['rm_child_class'].$app[0]['rm_reg_date'];
 	$obj_pdf->SetTitle($title);
 	$obj_pdf->SetDefaultMonospacedFont('helvetica');
-	$obj_pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+	// $obj_pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+	$obj_pdf->SetAutoPageBreak(TRUE, 10);
 	$obj_pdf->SetFont('helvetica', '', 11);
 	$obj_pdf->setFontSubsetting(true);
 	$obj_pdf->setPrintHeader(false);
@@ -648,6 +649,96 @@ $params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','
 		<td style="font-size:10px; width: 4%;font-weight: bold;">d]</td>
 		<td style="font-size:10px; width: 96%;">I understand that the acceptance of the Admission Form does not guarantee admission. Further, even after acceptance of the payment of fees, admission to my child is PROVISIONAL, subject to approval by the School Management/Authorities.</td>
 	</tr>
+	</table>
+	<?php
+
+		$content = ob_get_contents();
+		ob_end_clean();
+		$obj_pdf->writeHTML($content, false, false, false, false, '');
+
+		$obj_pdf->AddPage(3);
+		ob_start();
+
+	$style = array(
+	    'position' => 'L',
+	    'align' => 'L',
+	    'stretch' => false,
+	    'fitwidth' => true,
+	    'cellfitalign' => '',
+	    'border' => false,
+	    'hpadding' => 'auto',
+	    'vpadding' => 'auto',
+	    'fgcolor' => array(0,0,0),
+	    'bgcolor' => false, //array(255,255,255),
+	    'text' => false,
+	    'font' => 'helvetica',
+	    'fontsize' => 8,
+	    'stretchtext' => 4
+	);
+
+
+	// CODE I25
+	$barappno 	= $app[0]['rm_app_no'];
+
+	$birth_date = $app[0]['rm_child_birth_date'];
+	$reg_date 	= $app[0]['rm_reg_date'];
+	$b_date 	= preg_replace("/-/", "", $birth_date);
+	$r_date 	= preg_replace("/-/", "", $reg_date);
+
+	$barcode 	= $barappno.$b_date;
+	$params 	= $obj_pdf->serializeTCPDFtagParameters(array($barcode, 'I25', '', '','', 18, 0.8, $style, 'N'));
+?>
+<style>
+	.pr_data
+	{
+		border-right: 1px solid #ccc;
+		color:#333;
+		font-size:8px;
+	}
+	.headline{
+		background-color:#c9766e;color:#fff;
+
+	}
+	.pr_title{
+		color:#333;
+		font-weight:bold;
+		font-size:8px;
+		border-right: 1px solid #ccc;
+	}
+
+	.pr_title_bt{
+		color:#333;
+		font-weight:bold;
+		font-size:8px;
+	}
+
+	.tr_even{
+		background-color:#fff;
+	}
+	.tr_odd
+	{
+		background-color: #f9f9f9;
+	}
+	.header_title{
+		font-weight:normal;
+	}
+	.t_n_c p{
+		font-size:6px;
+	}
+	.marg{
+		margin-top:50px;
+	}
+
+</style>
+
+		<table>
+		<tr>
+			<td style="width:35%">
+				<tcpdf method="write1DBarcode" params="<?php echo $params?>" />
+			</td>
+		</tr>
+	</table>
+	<table cellpadding="6" class="table table-striped">
 	<tr>
 		<td style="font-size:10px; width: 4%;font-weight: bold;">e]</td>
 		<td style="font-size:10px; width: 96%;">I understand and am satisfied that the school Management is very cautious about the safety and welfare of children. Despite best efforts, all possible precautions, and safety measures taken by the school, any mishappening may occur due to any factors beyond the control of the school, I shall not blame the school Management in any manner, and I shall have no claim whatsoever.</td>

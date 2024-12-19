@@ -1028,7 +1028,7 @@ class Cmaster extends CI_Controller
 			$this->load->view('admin/pages/login');
 	}
 	public function add_update_inward($post_data){
-		$url = "https://albarkaatadmissions.com/fees2425/api/student/add_update";
+		$url = "https://albarkaatadmissions.com/fees2526/api/student/add_update";
 		// echo "<pre>"; print_r($url); exit;
 		// Create a new cURL resource
 		$init = curl_init($url);

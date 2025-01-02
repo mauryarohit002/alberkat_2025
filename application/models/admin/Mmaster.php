@@ -381,6 +381,7 @@
 				$report_data[$key]['rm_child_name'] = $value['rm_child_name'];
 				$report_data[$key]['rm_child_birth_date'] = $value['rm_child_birth_date'];
 				$report_data[$key]['rm_parent_mob_no'] = $value['rm_parent_mob_no'];
+				$report_data[$key]['rm_child_gender'] = $value['rm_child_gender'];
 				$report_data[$key]['rm_child_father_name'] = $value['rm_child_father_name'];
 				$report_data[$key]['rm_child_father_last_name'] = $value['rm_child_father_last_name'];
 				$report_data[$key]['rm_child_father_qualification'] = $value['rm_child_father_qualification'];
@@ -444,6 +445,7 @@
 				$report_data[$key]['rm_child_name'] = $value['rm_child_name'];
 				$report_data[$key]['rm_child_birth_date'] = $value['rm_child_birth_date'];
 				$report_data[$key]['rm_parent_mob_no'] = $value['rm_parent_mob_no'];
+				$report_data[$key]['rm_child_gender'] = $value['rm_child_gender'];
 				$report_data[$key]['rm_child_father_name'] = $value['rm_child_father_name'];
 				$report_data[$key]['rm_child_father_last_name'] = $value['rm_child_father_last_name'];
 				$report_data[$key]['rm_child_father_qualification'] = $value['rm_child_father_qualification'];
@@ -479,7 +481,7 @@
 			foreach ($report_data as $key => $value) 
 	    	{
 	    		
-	    		$child = "NAME : ".$value['rm_child_name'] . "\n" . "DOB : ".date('d-m-Y', strtotime($value['rm_child_birth_date'])). "\n" . "MOB : ".$value['rm_parent_mob_no'];
+	    		$child = "NAME : ".$value['rm_child_name'] . "\n" . "DOB : ".date('d-m-Y', strtotime($value['rm_child_birth_date'])). "\n" . "MOB : ".$value['rm_parent_mob_no']. "\n" ."GEN : ".$value['rm_child_gender'];
 	    		$father = "NAME : ".$value['rm_child_father_name'] . " ".$value['rm_child_father_last_name'] . "\n" . "QUALI : " . $value['rm_child_father_qualification'] . "\n" . "OCCU : ".$value['rm_child_father_occupation'];
 	    		$mother = "NAME : ".$value['rm_child_mother_name'] . " ".$value['rm_child_father_last_name'] . "\n" . "QUALI : ".$value['rm_child_mother_qualification'] . "\n" . "OCCU : ".$value['rm_child_mother_occupation'];
 	    		$gaurdian = "NAME : ".$value['rm_child_guardian_fname'] . " ".$value['rm_child_guardian_lname'] . "\n" . "OCCU : ".$value['rm_child_guardian_occupation'];

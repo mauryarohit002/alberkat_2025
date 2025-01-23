@@ -92,6 +92,7 @@
 		"rm_child_guardian_fname" 	=> "Gurdian Name",
 		"rm_child_class" 			=> "Standard",
 		"rm_parent_mob_no" 			=> "Mobile No",
+		"rm_child_gender" 			=> "Gender"
 	);	
 
 	$config['division'] = array(

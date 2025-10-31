@@ -193,8 +193,12 @@
 				$reg_master['rm_child_class'] 		= NURSERY;
 			}elseif ( strtotime($reg_master['rm_child_birth_date']) >= $startJrkg && strtotime($reg_master['rm_child_birth_date']) <= $endJrkg ) {
 				$reg_master['rm_child_class'] 		= JRKG;
+				echo 6;//admission closed that's y this written here;
+			    return;
 			}elseif ( strtotime($reg_master['rm_child_birth_date']) >= $startSrkg && strtotime($reg_master['rm_child_birth_date']) <= $endSrkg ) {
 				$reg_master['rm_child_class'] 		= SRKG;
+				echo 6;//admission closed that's y this written here;
+			    return;
 			}else{
 				echo 5;//dob out of year range for preprimary admission;
 				return;

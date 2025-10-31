@@ -742,6 +742,10 @@ var captcha_data='';
                         $("#rm_child_class option:selected").val('NURSERY');
                         $("#rm_child_class1").val('NURSERY');
                         $('#rm_child_class').attr("disabled", false); 
+                    }else if(resp == 6){
+                        alert("Admission is closed for this class. For further queries please contact the school admin office.");
+                        $("#rm_child_birth_date").css({'border-color':'red'});
+                        $('#rm_child_class').attr("disabled", false);
                     }
                     else
                     {

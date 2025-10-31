@@ -130,7 +130,7 @@
                         <li><a href="<?php echo base_url('chome/criteria')?>">ADMISSION CRITERIA 2025</a></li>
                         <li><a href="<?php echo base_url('chome/user_login')?>">EDIT APPLICATION</a></li>
                         <li><a href="<?php echo base_url('clogin/search')?>">TRACK APPLICATION</a></li>
-                         <!--<li><a href="<?php echo base_url('chome/register')?>">REGISTER</a></li> -->
+                        <li><a href="<?php echo base_url('chome/register')?>">REGISTER</a></li>
                         
                     </ul>
                   </div><!-- /.navbar-collapse -->
